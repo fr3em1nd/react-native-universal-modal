@@ -167,16 +167,3 @@ export function createPreset(
     },
   };
 }
-
-// Export individual presets
-export {
-  nonePreset,
-  fadePreset,
-  slideUpPreset,
-  slideDownPreset,
-  slideLeftPreset,
-  slideRightPreset,
-  scalePreset,
-  bouncePreset,
-  springPreset,
-};

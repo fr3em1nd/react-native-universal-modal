@@ -2,10 +2,12 @@
  * useFocusRestoration - Hook to restore focus when modal closes
  */
 
-import { useRef, useEffect, useCallback } from 'react';
-import { Platform, findNodeHandle, AccessibilityInfo } from 'react-native';
+import { useRef, useEffect, useCallback, type ComponentClass, type Component } from 'react';
+import { findNodeHandle, AccessibilityInfo } from 'react-native';
 import type { UseFocusRestorationOptions } from '../types';
 import { isWeb } from '../utils';
+
+type FindNodeHandleArg = ComponentClass<unknown, unknown> | Component<unknown, unknown, unknown> | number | null;
 
 /**
  * Hook to save and restore focus when a modal opens/closes
@@ -35,7 +37,7 @@ export function useFocusRestoration(options: UseFocusRestorationOptions): {
         // Native: We can't easily capture the currently focused element
         // but we can store a node handle if returnFocusRef is provided
         if (returnFocusRef?.current) {
-          previousFocusRef.current = findNodeHandle(returnFocusRef.current);
+          previousFocusRef.current = findNodeHandle(returnFocusRef.current as FindNodeHandleArg);
         }
       }
     }
@@ -57,7 +59,7 @@ export function useFocusRestoration(options: UseFocusRestorationOptions): {
     } else {
       // Native: Use AccessibilityInfo to set focus
       const nodeHandle =
-        (returnFocusRef?.current ? findNodeHandle(returnFocusRef.current) : null) ??
+        (returnFocusRef?.current ? findNodeHandle(returnFocusRef.current as FindNodeHandleArg) : null) ??
         (typeof previousFocusRef.current === 'number' ? previousFocusRef.current : null);
 
       if (nodeHandle) {

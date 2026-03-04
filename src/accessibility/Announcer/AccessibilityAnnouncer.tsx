@@ -3,7 +3,7 @@
  * Uses ARIA live regions to announce messages to screen readers
  */
 
-import React, { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import type { AnnouncementMessage, AnnouncementPriority } from '../../types';
 import { isWeb } from '../../utils';
@@ -66,7 +66,6 @@ export function AccessibilityAnnouncer(): JSX.Element | null {
     <View style={styles.container} accessibilityElementsHidden>
       {/* Polite announcements - won't interrupt current speech */}
       <View
-        // @ts-expect-error - web-only props
         role="status"
         aria-live="polite"
         aria-atomic="true"
@@ -81,7 +80,6 @@ export function AccessibilityAnnouncer(): JSX.Element | null {
 
       {/* Assertive announcements - will interrupt current speech */}
       <View
-        // @ts-expect-error - web-only props
         role="alert"
         aria-live="assertive"
         aria-atomic="true"

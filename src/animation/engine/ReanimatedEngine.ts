@@ -31,7 +31,8 @@ let Reanimated: {
     callback?: (finished: boolean) => void
   ) => number;
   withDelay: (delay: number, animation: number) => number;
-  runOnJS: <T extends (...args: unknown[]) => unknown>(fn: T) => T;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  runOnJS: <T extends (...args: any[]) => any>(fn: T) => T;
   Easing: {
     linear: unknown;
     ease: unknown;

@@ -2,11 +2,11 @@
  * ModalContent - Inner content wrapper with accessibility support
  */
 
-import React, { memo, useId, type ReactNode } from 'react';
-import { View, StyleSheet, type ViewStyle, type StyleProp } from 'react-native';
+import { memo, type ReactNode } from 'react';
+import { View, StyleSheet, type ViewStyle, type StyleProp, type ViewProps } from 'react-native';
 import { FocusTrap } from '../accessibility/FocusTrap';
 import { useAriaProps, generateAriaIds } from '../accessibility/aria';
-import type { AccessibilityConfig, ModalRole } from '../types';
+import type { AccessibilityConfig } from '../types';
 import { isWeb } from '../utils';
 
 interface ModalContentProps {
@@ -51,7 +51,7 @@ export const ModalContent = memo(function ModalContent({
       accessibilityRole="alert"
       accessibilityLabel={accessibilityConfig.accessibilityLabel}
       accessibilityHint={accessibilityConfig.accessibilityHint}
-      {...(isWeb ? ariaProps : {})}
+      {...(isWeb ? (ariaProps as Partial<ViewProps>) : {})}
     >
       {children}
     </View>

@@ -1,14 +1,14 @@
 module.exports = {
   preset: 'react-native',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|tsx)$',
+  testRegex: '(/__tests__/.*\\.(test|spec)|\\.(test|spec))\\.(ts|tsx)$',
   testPathIgnorePatterns: [
     '/node_modules/',
     '/lib/',
     '/__tests__/utils/',
   ],
   transformIgnorePatterns: [
-    'node_modules/(?!(react-native|@react-native|react-native-reanimated)/)',
+    'node_modules/(?!(@react-native|react-native|react-native-reanimated|@react-native-community)/)',
   ],
   moduleNameMapper: {
     '^react-native-universal-modal$': '<rootDir>/src/index.ts',

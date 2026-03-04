@@ -2,7 +2,7 @@
  * ModalPortal - Portal rendering for individual modals
  */
 
-import React, { memo, useEffect, useState, useCallback } from 'react';
+import { memo, useEffect, useState, useCallback } from 'react';
 import { Platform } from 'react-native';
 import { ModalStackContext, type ModalStackContextValue } from '../context/ModalStackContext';
 import { useModalContext, useModalDispatch } from '../context/hooks/useModalContext';
@@ -14,7 +14,7 @@ import { WebPortalTarget, useBodyScrollLock } from '../platform/web/WebPortalTar
 import { useEscapeKey } from '../accessibility/keyboard/useEscapeKey';
 import { useBackHandler } from '../accessibility/keyboard/useBackHandler';
 import { useAnnouncer } from '../accessibility/Announcer';
-import type { ModalId, ModalState, ActiveModal } from '../types';
+import type { ModalState, ActiveModal } from '../types';
 import { isWeb } from '../utils';
 
 interface ModalPortalProps {

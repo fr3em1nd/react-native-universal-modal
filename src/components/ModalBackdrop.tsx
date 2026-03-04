@@ -73,7 +73,7 @@ export const ModalBackdrop = memo(function ModalBackdrop({
     }
   }, [onPress, state]);
 
-  if (!visible && state === 'exited') {
+  if (!visible && state === 'hidden') {
     return null;
   }
 

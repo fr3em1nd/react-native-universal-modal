@@ -1,4 +1,4 @@
-import React, { useReducer, useMemo, useRef, useEffect, type ReactNode } from 'react';
+import React, { useReducer, useMemo, useRef, useEffect } from 'react';
 import {
   ModalContext,
   ModalDispatchContext,
@@ -98,7 +98,7 @@ export function withModalProvider<P extends object>(
   config?: ModalConfig
 ): React.FC<P> {
   const WrappedComponent: React.FC<P> = (props) => (
-    <ModalProvider config={config}>
+    <ModalProvider {...(config ? { config } : {})}>
       <Component {...props} />
     </ModalProvider>
   );

@@ -4,12 +4,7 @@
 
 import '@testing-library/react-native/extend-expect';
 
-// Mock react-native-reanimated
-jest.mock('react-native-reanimated', () => {
-  const Reanimated = require('react-native-reanimated/mock');
-  Reanimated.default.call = () => {};
-  return Reanimated;
-});
+// react-native-reanimated is mocked via __mocks__/react-native-reanimated.ts
 
 // Mock Platform
 jest.mock('react-native/Libraries/Utilities/Platform', () => ({

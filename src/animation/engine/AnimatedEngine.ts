@@ -124,9 +124,10 @@ export function useAnimatedEngine(
       extrapolate: 'clamp',
     });
 
-    (animatedStyle.transform as Animated.WithAnimatedArray<ViewStyle['transform']>)?.push({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (animatedStyle.transform as any)?.push({
       rotate: rotateInterpolation,
-    } as unknown as Animated.WithAnimatedObject<ViewStyle['transform']>[number]);
+    });
   }
 
   return {

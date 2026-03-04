@@ -2,13 +2,12 @@
  * ThemeContext - Theme provider for modal styling
  */
 
-import React, {
+import {
   createContext,
   useContext,
   useState,
   useMemo,
   useCallback,
-  type ReactNode,
 } from 'react';
 import type { ModalTheme, ThemeContextValue, ThemeProviderProps } from '../types';
 import { defaultTheme } from './defaultTheme';
@@ -23,21 +22,23 @@ const ThemeContext = createContext<ThemeContextValue | null>(null);
  * Deep merge two theme objects
  */
 function mergeThemes(base: ModalTheme, override: Partial<ModalTheme>): ModalTheme {
-  const result: ModalTheme = { ...base };
+  // Use spread to create a new object, then override with merged values
+  const result = { ...base } as Record<string, unknown>;
 
-  for (const key of Object.keys(override) as Array<keyof ModalTheme>) {
-    const overrideValue = override[key];
+  for (const key of Object.keys(override)) {
+    const overrideValue = override[key as keyof ModalTheme];
+    const baseValue = base[key as keyof ModalTheme];
     if (overrideValue && typeof overrideValue === 'object' && !Array.isArray(overrideValue)) {
       result[key] = {
-        ...(base[key] as object),
+        ...(baseValue as object),
         ...(overrideValue as object),
-      } as ModalTheme[typeof key];
+      };
     } else if (overrideValue !== undefined) {
-      result[key] = overrideValue as ModalTheme[typeof key];
+      result[key] = overrideValue;
     }
   }
 
-  return result;
+  return result as ModalTheme;
 }
 
 /**

@@ -3,7 +3,7 @@
  * Traps keyboard focus within the modal for accessibility
  */
 
-import React, { useEffect, useRef, useCallback, type ReactNode } from 'react';
+import { useEffect, useRef, useCallback, type ReactNode } from 'react';
 import { View, type ViewProps } from 'react-native';
 import type { FocusTrapConfig } from '../../types';
 import { FOCUSABLE_SELECTORS } from '../../core/constants';

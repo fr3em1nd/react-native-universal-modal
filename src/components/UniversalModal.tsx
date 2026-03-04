@@ -2,7 +2,7 @@
  * UniversalModal - Declarative modal component
  */
 
-import React, { useEffect, useRef, useCallback, type ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import { useModalContext, useModalDispatch } from '../context/hooks/useModalContext';
 import type {
   UniversalModalProps,
@@ -77,25 +77,28 @@ export function UniversalModal({
   const isShowingRef = useRef(false);
   const prevVisibleRef = useRef(visible);
 
-  // Build config
+  // Build config - only include defined values to satisfy exactOptionalPropertyTypes
   const config: ModalConfig = {
     animationIn: animation,
     animationOut: animation,
-    animationDuration: animationConfig?.duration,
     closeOnBackdropPress,
     closeOnEscape,
     closeOnBackButton,
-    backdropOpacity,
-    backdropColor,
-    avoidKeyboard,
     trapFocus,
     restoreFocus,
-    accessibilityLabel,
-    openAnnouncement,
-    closeAnnouncement,
     priority,
-    containerStyle,
-    contentStyle,
+    ...(onClose !== undefined && { onClose }),
+    ...(onAnimationEnd !== undefined && { onAnimationEnd }),
+    ...(testID !== undefined && { testID }),
+    ...(animationConfig?.duration !== undefined && { animationDuration: animationConfig.duration }),
+    ...(backdropOpacity !== undefined && { backdropOpacity }),
+    ...(backdropColor !== undefined && { backdropColor }),
+    ...(avoidKeyboard !== undefined && { avoidKeyboard }),
+    ...(accessibilityLabel !== undefined && { accessibilityLabel }),
+    ...(openAnnouncement !== undefined && { openAnnouncement }),
+    ...(closeAnnouncement !== undefined && { closeAnnouncement }),
+    ...(containerStyle !== undefined && { containerStyle }),
+    ...(contentStyle !== undefined && { contentStyle }),
   };
 
   // Handle visibility changes

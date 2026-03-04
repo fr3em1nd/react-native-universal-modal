@@ -29,7 +29,8 @@ export interface ModalInjectedProps {
 /**
  * A component that can be rendered as a modal
  */
-export type ModalComponent<TProps = object, TResult = void> = ComponentType<
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export type ModalComponent<TProps = object, _TResult = void> = ComponentType<
   TProps & Partial<ModalInjectedProps>
 >;
 
@@ -71,6 +72,12 @@ export interface ModalConfig {
   openAnnouncement?: string;
   /** Screen reader announcement when modal closes */
   closeAnnouncement?: string;
+  /** Callback when modal should close (e.g., backdrop press) */
+  onClose?: () => void;
+  /** Callback when animation completes */
+  onAnimationEnd?: () => void;
+  /** Test ID for testing */
+  testID?: string;
 }
 
 /**

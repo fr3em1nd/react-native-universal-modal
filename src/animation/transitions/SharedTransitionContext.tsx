@@ -2,7 +2,7 @@
  * SharedTransitionContext - Context for managing shared transitions between modals
  */
 
-import React, {
+import {
   createContext,
   useContext,
   useCallback,

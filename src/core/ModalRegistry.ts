@@ -29,15 +29,15 @@ export class ModalRegistry {
   ): ModalId {
     const id = generateId('registered');
 
-    const entry: RegisteredModal<TProps, TResult> = {
+    const entry: RegisteredModal = {
       id,
-      component: component as ModalComponent<Record<string, unknown>, unknown>,
+      component: component as unknown as ModalComponent,
       config,
       props: null,
       resolve: null,
     };
 
-    this.registry.set(id, entry as RegisteredModal);
+    this.registry.set(id, entry);
 
     return id;
   }
@@ -84,7 +84,7 @@ export class ModalRegistry {
     const entry = this.registry.get(id);
     if (!entry) return false;
 
-    entry.props = props;
+    entry.props = props as Record<string, unknown>;
     return true;
   }
 
@@ -113,7 +113,7 @@ export class ModalRegistry {
     const entry = this.registry.get(id);
     if (!entry?.resolve) return false;
 
-    entry.resolve(result);
+    (entry.resolve as (r: unknown) => void)(result);
     entry.resolve = null;
     return true;
   }

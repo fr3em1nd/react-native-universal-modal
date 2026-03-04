@@ -2,7 +2,7 @@
  * ModalRoot - Root component that renders all active modals
  */
 
-import React, { memo } from 'react';
+import { memo } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useModalContext } from '../context/hooks/useModalContext';
 import { ModalPortal } from '../components/ModalPortal';

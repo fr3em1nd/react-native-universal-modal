@@ -9,7 +9,7 @@ export default defineConfig([
     dts: false,
     sourcemap: true,
     clean: true,
-    external: ['react', 'react-native', 'react-native-reanimated'],
+    external: ['react', 'react-native', 'react-native-reanimated', 'react-dom'],
     esbuildOptions(options) {
       options.platform = 'neutral';
       options.conditions = ['react-native'];
@@ -23,7 +23,7 @@ export default defineConfig([
     dts: false,
     sourcemap: true,
     clean: false,
-    external: ['react', 'react-native', 'react-native-reanimated'],
+    external: ['react', 'react-native', 'react-native-reanimated', 'react-dom'],
     esbuildOptions(options) {
       options.platform = 'neutral';
       options.conditions = ['react-native'];
@@ -36,6 +36,6 @@ export default defineConfig([
     outDir: 'lib/typescript',
     dts: { only: true },
     clean: false,
-    external: ['react', 'react-native', 'react-native-reanimated'],
+    external: ['react', 'react-native', 'react-native-reanimated', 'react-dom'],
   },
 ]);
