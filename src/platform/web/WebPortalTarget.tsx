@@ -2,7 +2,7 @@
  * WebPortalTarget - Creates a portal container for modals on web
  */
 
-import React, { useEffect, useRef, type ReactNode } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { WEB_PORTAL_CONTAINER_ID } from '../../core/constants';
 

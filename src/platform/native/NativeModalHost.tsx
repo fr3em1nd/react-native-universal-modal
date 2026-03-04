@@ -2,7 +2,7 @@
  * NativeModalHost - Container wrapper for native modal rendering
  */
 
-import React, { type ReactNode, memo } from 'react';
+import { type ReactNode, memo } from 'react';
 import { View, StyleSheet, Platform, type ViewStyle } from 'react-native';
 import type { ModalState } from '../../types';
 

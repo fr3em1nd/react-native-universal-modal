@@ -2,7 +2,7 @@
  * UniversalModal - Declarative modal component
  */
 
-import { useEffect, useRef, type ReactNode } from 'react';
+import { useEffect, useRef, useMemo, type ReactNode } from 'react';
 import { useModalContext, useModalDispatch } from '../context/hooks/useModalContext';
 import type {
   UniversalModalProps,
@@ -78,7 +78,7 @@ export function UniversalModal({
   const prevVisibleRef = useRef(visible);
 
   // Build config - only include defined values to satisfy exactOptionalPropertyTypes
-  const config: ModalConfig = {
+  const config: ModalConfig = useMemo(() => ({
     animationIn: animation,
     animationOut: animation,
     closeOnBackdropPress,
@@ -99,7 +99,27 @@ export function UniversalModal({
     ...(closeAnnouncement !== undefined && { closeAnnouncement }),
     ...(containerStyle !== undefined && { containerStyle }),
     ...(contentStyle !== undefined && { contentStyle }),
-  };
+  }), [
+    animation,
+    closeOnBackdropPress,
+    closeOnEscape,
+    closeOnBackButton,
+    trapFocus,
+    restoreFocus,
+    priority,
+    onClose,
+    onAnimationEnd,
+    testID,
+    animationConfig?.duration,
+    backdropOpacity,
+    backdropColor,
+    avoidKeyboard,
+    accessibilityLabel,
+    openAnnouncement,
+    closeAnnouncement,
+    containerStyle,
+    contentStyle,
+  ]);
 
   // Handle visibility changes
   useEffect(() => {

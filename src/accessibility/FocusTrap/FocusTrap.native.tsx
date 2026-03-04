@@ -3,7 +3,7 @@
  * On native platforms, we use accessibilityViewIsModal instead of manual focus trapping
  */
 
-import React, { type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { View, Platform, type ViewProps } from 'react-native';
 import type { FocusTrapConfig } from '../../types';
 
