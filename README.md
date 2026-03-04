@@ -349,6 +349,27 @@ Contributions are welcome! Please read our contributing guide for details.
 4. Push to the branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
 
+## Support the Project
+
+If you find this library helpful, consider supporting its development:
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/jobmyt86)
+
+Your donations help maintain and improve this library!
+
+## Issues & Support
+
+Found a bug or have a feature request?
+
+- **GitHub Issues**: [https://github.com/fr3em1nd/react-native-universal-modal/issues](https://github.com/fr3em1nd/react-native-universal-modal/issues)
+- **Email**: [info@jobmyt.com](mailto:info@jobmyt.com)
+
+## Author
+
+**Solomon Monotilla**
+
+- GitHub: [@fr3em1nd](https://github.com/fr3em1nd)
+
 ## License
 
 MIT
