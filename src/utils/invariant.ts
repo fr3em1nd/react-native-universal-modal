@@ -9,7 +9,7 @@ export function invariant(
   message: string
 ): asserts condition {
   if (!condition) {
-    throw new Error(`[react-native-universal-modal] ${message}`);
+    throw new Error(`[react-native-unified-modal] ${message}`);
   }
 }
 
@@ -20,7 +20,7 @@ export function invariant(
  */
 export function warning(condition: unknown, message: string): void {
   if (!condition && __DEV__) {
-    console.warn(`[react-native-universal-modal] ${message}`);
+    console.warn(`[react-native-unified-modal] ${message}`);
   }
 }
 

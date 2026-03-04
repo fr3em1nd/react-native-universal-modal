@@ -11,8 +11,8 @@ module.exports = {
     'node_modules/(?!(@react-native|react-native|react-native-reanimated|@react-native-community)/)',
   ],
   moduleNameMapper: {
-    '^react-native-universal-modal$': '<rootDir>/src/index.ts',
-    '^react-native-universal-modal/(.*)$': '<rootDir>/src/$1',
+    '^react-native-unified-modal$': '<rootDir>/src/index.ts',
+    '^react-native-unified-modal/(.*)$': '<rootDir>/src/$1',
   },
   setupFilesAfterEnv: ['<rootDir>/__tests__/setup.ts'],
   collectCoverageFrom: [

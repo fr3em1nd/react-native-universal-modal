@@ -1,5 +1,5 @@
 /**
- * Example App demonstrating react-native-universal-modal
+ * Example App demonstrating react-native-unified-modal
  */
 
 import React, { useState } from 'react';
@@ -18,7 +18,7 @@ import {
   useModal,
   ThemeProvider,
   defaultTheme,
-} from 'react-native-universal-modal';
+} from 'react-native-unified-modal';
 
 // ============================================================================
 // Example Modal Components
@@ -205,7 +205,7 @@ function MainContent() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        <Text style={styles.title}>react-native-universal-modal</Text>
+        <Text style={styles.title}>react-native-unified-modal</Text>
         <Text style={styles.subtitle}>Example App</Text>
 
         <DeclarativeDemo />

@@ -1,5 +1,5 @@
 {
-  "name": "react-native-universal-modal",
+  "name": "react-native-unified-modal",
   "version": "1.0.0",
   "description": "A fully customizable, accessible, cross-platform modal system for React Native (iOS, Android, Web)",
   "main": "lib/commonjs/index.js",
@@ -64,12 +64,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fr3em1nd/react-native-universal-modal"
+    "url": "https://github.com/fr3em1nd/react-native-unified-modal"
   },
   "bugs": {
-    "url": "https://github.com/fr3em1nd/react-native-universal-modal/issues"
+    "url": "https://github.com/fr3em1nd/react-native-unified-modal/issues"
   },
-  "homepage": "https://github.com/fr3em1nd/react-native-universal-modal#readme",
+  "homepage": "https://github.com/fr3em1nd/react-native-unified-modal#readme",
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-native": ">=0.73.0"

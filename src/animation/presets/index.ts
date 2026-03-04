@@ -108,7 +108,7 @@ export function getPreset(name: AnimationPresetName | string): AnimationPresetCo
   const preset = presetRegistry[name];
   if (!preset) {
     console.warn(
-      `[react-native-universal-modal] Unknown animation preset: "${name}". ` +
+      `[react-native-unified-modal] Unknown animation preset: "${name}". ` +
         `Using "fade" as fallback. Available presets: ${Object.keys(presetRegistry).join(', ')}`
     );
     return fadePreset;
@@ -124,7 +124,7 @@ export function getPreset(name: AnimationPresetName | string): AnimationPresetCo
 export function registerPreset(name: string, preset: AnimationPresetConfig): void {
   if (presetRegistry[name]) {
     console.warn(
-      `[react-native-universal-modal] Overwriting existing preset: "${name}"`
+      `[react-native-unified-modal] Overwriting existing preset: "${name}"`
     );
   }
   presetRegistry[name] = preset;

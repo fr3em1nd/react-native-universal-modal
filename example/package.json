@@ -1,5 +1,5 @@
 {
-  "name": "react-native-universal-modal-example",
+  "name": "react-native-unified-modal-example",
   "version": "1.0.0",
   "private": true,
   "main": "node_modules/expo/AppEntry.js",
@@ -13,7 +13,7 @@
     "expo": "~50.0.0",
     "react": "18.2.0",
     "react-native": "0.73.0",
-    "react-native-universal-modal": "link:.."
+    "react-native-unified-modal": "link:.."
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

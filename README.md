@@ -1,8 +1,8 @@
-# react-native-universal-modal
+# react-native-unified-modal
 
 A fully customizable, accessible, cross-platform modal system for React Native (iOS, Android, Web).
 
-[![npm version](https://badge.fury.io/js/react-native-universal-modal.svg)](https://badge.fury.io/js/react-native-universal-modal)
+[![npm version](https://badge.fury.io/js/react-native-unified-modal.svg)](https://badge.fury.io/js/react-native-unified-modal)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -21,9 +21,9 @@ A fully customizable, accessible, cross-platform modal system for React Native (
 ## Installation
 
 ```bash
-npm install react-native-universal-modal
+npm install react-native-unified-modal
 # or
-yarn add react-native-universal-modal
+yarn add react-native-unified-modal
 ```
 
 ### Optional: react-native-reanimated
@@ -41,7 +41,7 @@ The library automatically uses Reanimated when available, falling back to React 
 ### 1. Wrap your app with ModalProvider
 
 ```tsx
-import { ModalProvider, ModalRoot } from 'react-native-universal-modal';
+import { ModalProvider, ModalRoot } from 'react-native-unified-modal';
 
 function App() {
   return (
@@ -56,7 +56,7 @@ function App() {
 ### 2. Use the Declarative API
 
 ```tsx
-import { UniversalModal } from 'react-native-universal-modal';
+import { UniversalModal } from 'react-native-unified-modal';
 import { useState } from 'react';
 import { View, Text, Button } from 'react-native';
 
@@ -86,7 +86,7 @@ function MyComponent() {
 ### 3. Or Use the Imperative API
 
 ```tsx
-import { useModal } from 'react-native-universal-modal';
+import { useModal } from 'react-native-unified-modal';
 import { View, Text, Button } from 'react-native';
 
 // Define your modal component
@@ -214,7 +214,7 @@ Built-in animation presets:
 #### Custom Animations
 
 ```tsx
-import { registerPreset, createPreset } from 'react-native-universal-modal';
+import { registerPreset, createPreset } from 'react-native-unified-modal';
 
 // Register a custom animation
 registerPreset('myAnimation', createPreset({
@@ -230,7 +230,7 @@ registerPreset('myAnimation', createPreset({
 ### Theming
 
 ```tsx
-import { ThemeProvider, defaultTheme, darkTheme } from 'react-native-universal-modal';
+import { ThemeProvider, defaultTheme, darkTheme } from 'react-native-unified-modal';
 
 // Use built-in themes
 <ThemeProvider theme={defaultTheme} darkMode={isDark} darkTheme={darkTheme}>
@@ -310,7 +310,7 @@ function SecondModal({ hide, isTopModal }) {
 Animate smoothly between modals:
 
 ```tsx
-import { SharedTransitionProvider, useSharedTransition } from 'react-native-universal-modal';
+import { SharedTransitionProvider, useSharedTransition } from 'react-native-unified-modal';
 
 function Modal1({ modalId }) {
   const { transitionTo } = useSharedTransition({ modalId });
@@ -361,7 +361,7 @@ Your donations help maintain and improve this library!
 
 Found a bug or have a feature request?
 
-- **GitHub Issues**: [https://github.com/fr3em1nd/react-native-universal-modal/issues](https://github.com/fr3em1nd/react-native-universal-modal/issues)
+- **GitHub Issues**: [https://github.com/fr3em1nd/react-native-unified-modal/issues](https://github.com/fr3em1nd/react-native-unified-modal/issues)
 - **Email**: [info@jobmyt.com](mailto:info@jobmyt.com)
 
 ## Author

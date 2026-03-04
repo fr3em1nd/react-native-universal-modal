@@ -17,7 +17,7 @@ const originalWarn = console.warn;
 console.warn = (...args) => {
   if (
     args[0]?.includes?.('act(...)') ||
-    args[0]?.includes?.('[react-native-universal-modal]')
+    args[0]?.includes?.('[react-native-unified-modal]')
   ) {
     return;
   }

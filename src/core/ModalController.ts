@@ -33,7 +33,7 @@ interface ProviderRef {
  * Usage:
  * ```tsx
  * // In a ModalProvider setup file
- * import { ModalController } from 'react-native-universal-modal';
+ * import { ModalController } from 'react-native-unified-modal';
  *
  * // The controller is automatically connected when using ModalProvider
  *

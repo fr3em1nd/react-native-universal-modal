@@ -1,5 +1,5 @@
 /**
- * react-native-universal-modal
+ * react-native-unified-modal
  *
  * A fully customizable, accessible, cross-platform modal system
  * for React Native (iOS, Android, Web)

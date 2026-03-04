@@ -23,8 +23,8 @@
     "exactOptionalPropertyTypes": false,
     "baseUrl": ".",
     "paths": {
-      "react-native-universal-modal": ["./src/index.ts"],
-      "react-native-universal-modal/*": ["./src/*"]
+      "react-native-unified-modal": ["./src/index.ts"],
+      "react-native-unified-modal/*": ["./src/*"]
     }
   },
   "include": ["src/**/*"],
